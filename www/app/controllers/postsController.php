@@ -15,3 +15,13 @@ function indexAction(PDO $connexion)
     include '../app/views/posts/index.php';
     $content = ob_get_clean();
 }
+function showAction(PDO $connexion, int $id)
+{
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\findById($connexion, $id);
+
+    global $content;
+    ob_start();
+    include '../app/views/posts/show.php';
+    $content = ob_get_clean();
+}
