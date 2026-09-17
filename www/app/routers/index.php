@@ -1,13 +1,10 @@
 <?php
 
-//ROUTE PAR DEFAUT : les 10 derniers posts
+// ROUTE PAR DÉFAUT: Les 10 derniers posts
+// PATTERN: /
+// URL: ?
+// CTRL: postsController
+// ACTION: index
 
-//PATTERN:/
-//URL:?
-//CTRL:postsController
-//ACTION:index
-
-
-
-include_once '../app/controllers/pagesController.php';
-$action = $_GET['action'] ?? 'home';
+include_once '../app/controllers/postsController.php';
+\App\Controllers\PostsController\indexAction($connexion);
