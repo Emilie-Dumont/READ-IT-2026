@@ -14,6 +14,13 @@ if (isset($_GET['posts'])):
 elseif (isset($_GET['users'])):
     include_once '../app/routers/users.php';
 
+// ROUTES COMMENTS
+// PATTERN: /comments/...
+// URL: ?comments=...
+// ROUTER comments
+elseif (isset($_GET['comments'])):
+    include_once '../app/routers/comments.php';
+
 // ROUTE PAR DÉFAUT: Les 10 derniers posts
 // PATTERN: /
 // URL: ?
