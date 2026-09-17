@@ -15,3 +15,11 @@ function findAllByPostId(PDO $connexion, int $postId): array
     $rs->execute();
     return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
+function findAll(PDO $connexion): array
+{
+    $sql = "SELECT *
+            FROM tags;";
+    $rs = $connexion->prepare($sql);
+    $rs->execute();
+    return $rs->fetchAll(PDO::FETCH_ASSOC);
+}
