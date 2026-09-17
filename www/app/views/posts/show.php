@@ -11,10 +11,9 @@
 
 <div class="tag-widget post-tag-container mb-5 mt-5">
     <div class="tagcloud">
-        <a href="#" class="tag-cloud-link">Life</a>
-        <a href="#" class="tag-cloud-link">Sport</a>
-        <a href="#" class="tag-cloud-link">Tech</a>
-        <a href="#" class="tag-cloud-link">Travel</a>
+        <?php foreach ($tags as $tag): ?>
+            <a href="#" class="tag-cloud-link"><?php echo $tag['name']; ?></a>
+        <?php endforeach; ?>
     </div>
 </div>
 

@@ -4,6 +4,7 @@ namespace App\Controllers\PostsController;
 
 use \PDO;
 use \App\Models\PostsModel;
+use \App\Models\TagsModel;
 
 function indexAction(PDO $connexion)
 {
@@ -18,7 +19,9 @@ function indexAction(PDO $connexion)
 function showAction(PDO $connexion, int $id)
 {
     include_once '../app/models/postsModel.php';
+    include_once '../app/models/tagsModel.php';
     $post = PostsModel\findById($connexion, $id);
+    $tags = TagsModel\findAllByPostId($connexion, $id);
 
     global $content;
     ob_start();
