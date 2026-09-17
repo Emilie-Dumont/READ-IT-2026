@@ -1,2 +1,0 @@
-<?php
-// Router - À compléter

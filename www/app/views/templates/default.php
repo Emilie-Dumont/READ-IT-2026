@@ -18,18 +18,7 @@
 
     <?php include '../app/views/templates/partials/_loader.php'; ?>
 
-    <?php include '../app/views/templates/partials/_scripts.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
+    <?php include '../app/views/templates/partials/_script.php'; ?>
 
 </body>
 
