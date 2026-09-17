@@ -7,6 +7,13 @@
 if (isset($_GET['posts'])):
     include_once '../app/routers/posts.php';
 
+// ROUTES USERS
+// PATTERN: /users/...
+// URL: ?users=...
+// ROUTER users
+elseif (isset($_GET['users'])):
+    include_once '../app/routers/users.php';
+
 // ROUTE PAR DÉFAUT: Les 10 derniers posts
 // PATTERN: /
 // URL: ?
