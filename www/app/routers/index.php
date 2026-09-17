@@ -21,6 +21,15 @@ elseif (isset($_GET['users'])):
 elseif (isset($_GET['comments'])):
     include_once '../app/routers/comments.php';
 
+// ROUTE CONTACT
+// PATTERN: /contact
+// URL: ?contact
+elseif (isset($_GET['contact'])):
+    $title = "Contact";
+    ob_start();
+    include '../app/views/templates/partials/_contact.php';
+    $content = ob_get_clean();
+
 // ROUTE PAR DÉFAUT: Les 10 derniers posts
 // PATTERN: /
 // URL: ?
