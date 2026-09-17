@@ -6,6 +6,7 @@ use \PDO;
 use \App\Models\PostsModel;
 use \App\Models\TagsModel;
 use \App\Models\AuthorsModel;
+use \App\Models\CommentsModel;
 
 function indexAction(PDO $connexion)
 {
@@ -21,10 +22,12 @@ function showAction(PDO $connexion, int $id)
 {
     include_once '../app/models/postsModel.php';
     include_once '../app/models/authorsModel.php';
+    include_once '../app/models/commentsModel.php';
     include_once '../app/models/tagsModel.php';
     $post = PostsModel\findById($connexion, $id);
     $tags = TagsModel\findAllByPostId($connexion, $id);
     $author = AuthorsModel\findOneById($connexion, $post['author_id']);
+    $comments = CommentsModel\findAllByPostId($connexion, $id);
 
     global $content, $title;
     $title = $post['title'];
